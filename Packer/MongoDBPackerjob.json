@@ -1,0 +1,55 @@
+{
+  "variables": {
+     "client_id": "",
+    "client_secret": "",
+    "resource_group": "",
+    "storage_account": "",
+    "subscription_id": "",
+    "tenant_id": ""
+  },
+  "builders": [{
+    "type": "azure-arm",
+
+    "client_id": "{{user `client_id`}}",
+    "client_secret": "{{user `client_secret`}}",
+    "resource_group_name": "{{user `resource_group`}}",
+    "storage_account": "{{user `storage_account`}}",
+    "subscription_id": "{{user `subscription_id`}}",
+     "tenant_id": "{{user `tenant_id`}}",
+
+    "capture_container_name": "mongodbimages",
+    "capture_name_prefix": "MongoDB",
+
+    "os_type": "Linux",
+    "image_publisher": "Canonical",
+    "image_offer": "UbuntuServer",
+    "image_sku": "16.04-LTS",
+
+    "azure_tags": {
+        "dept": "engineering",
+        "task": "image deployment"
+    },
+
+    "location": "West US",
+    "vm_size": "Standard_D1_v2"
+  }],
+  "provisioners": [{
+    "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E sh '{{ .Path }}'",
+    "inline": [
+      "apt-get update",
+      "sudo apt-get install openjdk-8-jdk -y",
+      "addgroup hab",
+      "sudo useradd -g hab hab",
+      "usermod -aG sudo hab",
+      "sleep 30",
+      "mkdir /scripts",
+      "curl https://raw.githubusercontent.com/habitat-sh/habitat/master/components/hab/install.sh | sudo bash",
+      "wget -O /scripts/run_mongodb.sh https://raw.githubusercontent.com/sysgain/MSOSS/staging/scripts/run_mongodb.sh",
+      "chmod +x /scripts/run_mongodb.sh",
+      "sed -i -e '13i/scripts/run_mongodb.sh\\' /etc/rc.local",
+      "/usr/sbin/waagent -force -deprovision+user && export HISTSIZE=0 && sync"
+    ],
+    "inline_shebang": "/bin/sh -x",
+    "type": "shell"
+  }]
+}
