@@ -26,11 +26,11 @@ sudo apt-get -y install apt-transport-https azure-cli html-xml-utils xmlstarlet 
 
 #Download the Required Jenkins Files
 echo "---Download the Required Jenkins Files---" >> $LOG
-wget -P $srcdir https://raw.githubusercontent.com/sysgain/MSOSS/staging/scripts/elk-config.xml >> $LOG
-wget -P $srcdir https://raw.githubusercontent.com/sysgain/MSOSS/staging/scripts/MongoDBTerraformjob.xml >> $LOG
-wget -P $srcdir https://raw.githubusercontent.com/sysgain/MSOSS/staging/scripts/VMSSjob.xml >> $LOG
-wget -P $srcdir https://raw.githubusercontent.com/sysgain/MSOSS/staging/scripts/MongoDBPackerjob.xml >> $LOG
-wget -P $srcdir https://raw.githubusercontent.com/sysgain/MSOSS/staging/scripts/AppPackerjob.xml >> $LOG
+wget -P $srcdir https://raw.githubusercontent.com/sysgain/MSOSS/master/scripts/elk-config.xml >> $LOG
+wget -P $srcdir https://raw.githubusercontent.com/sysgain/MSOSS/master/scripts/MongoDBTerraformjob.xml >> $LOG
+wget -P $srcdir https://raw.githubusercontent.com/sysgain/MSOSS/master/scripts/VMSSjob.xml >> $LOG
+wget -P $srcdir https://raw.githubusercontent.com/sysgain/MSOSS/master/scripts/MongoDBPackerjob.xml >> $LOG
+wget -P $srcdir https://raw.githubusercontent.com/sysgain/MSOSS/master/scripts/AppPackerjob.xml >> $LOG
 
 #Configuring Jenkins
 echo "---Configuring Jenkins---"
@@ -114,8 +114,8 @@ then
 
 fi
 	
-wget -P $jenkinsdir https://raw.githubusercontent.com/sysgain/MSOSS/staging/scripts/biz.neustar.jenkins.plugins.packer.PackerPublisher.xml
-wget -P $jenkinsdir https://raw.githubusercontent.com/sysgain/MSOSS/staging/scripts/org.jenkinsci.plugins.terraform.TerraformBuildWrapper.xml
+wget -P $jenkinsdir https://raw.githubusercontent.com/sysgain/MSOSS/master/scripts/biz.neustar.jenkins.plugins.packer.PackerPublisher.xml
+wget -P $jenkinsdir https://raw.githubusercontent.com/sysgain/MSOSS/master/scripts/org.jenkinsci.plugins.terraform.TerraformBuildWrapper.xml
 sleep 30 && java -jar $srcdir/jenkins-cli.jar -s  http://$url restart --username $user --password $passwd && sleep 30
 curl -X POST "http://$user:$api@$url/createItem?name=ELKJob" --data-binary "@$srcdir/elk-newconfig.xml" -H "$CRUMB" -H "Content-Type: text/xml"
 curl -X POST "http://$user:$api@$url/createItem?name=AppPackerjob" --data-binary "@$srcdir/AppPackerjob-newconfig.xml" -H "$CRUMB" -H "Content-Type: text/xml"
