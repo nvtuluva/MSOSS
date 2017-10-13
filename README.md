@@ -5,7 +5,7 @@
 
 ## Solution Architecture:
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/1.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/1.png)
 
 This solution will deploy the following architecture:
 
@@ -70,7 +70,7 @@ Elasticsearch is an open-source, broadly-distributable, readily-scalable, enterp
 
 **Flow Diagram:**
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/2.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/2.png)
 
 ### The following logs are visualized in Kibana:
 
@@ -138,7 +138,7 @@ This is because in Habitat, the application is the unit of automation.  This mea
 
 ### Packaging an Application with Habitat:
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/3.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/3.png)
 
 ### Habitat Components:
 
@@ -179,11 +179,11 @@ PuTTYgen is a key generator tool for creating SSH keys for PuTTY
 
 2. Go to Windows  **Start menu**  →  **All Programs**  →  **PuTTY** →  **PuTTYgen** to generate an SSH key.
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/4.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/4.png)
 
 3. Click  **Generate** , and start moving the mouse within the window. Putty uses mouse movements to collect randomness. You may need to move the mouse for some time, depending on the size of your key. As you move it, the green progress bar should advance.
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/5.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/5.png)
 
 4. Once the progress bar becomes full, the actual key generation computation takes place. When complete, the public key should appear in the Window.
 
@@ -191,7 +191,7 @@ PuTTYgen is a key generator tool for creating SSH keys for PuTTY
 
 6. You should save at the private key by clicking  **Save private key** , this private key will be used to log in to the Jenkins server.
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/6.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/6.png)
 
 ### Create Service principal
 
@@ -260,31 +260,31 @@ You will receive the following output:_
 
 3. Click on **New (+)** and search for **Template deployment** , then click on it.
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/7.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/7.png)
 
 4. Click on **Create.**
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/8.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/8.png)
 
 5. Click on **Build your own template in the editor**.
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/9.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/9.png)
 
 6. Clear the default template section, paste the template from the GitHub and click on **Save**.
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/10.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/10.png)
 
 7. Enter the detailsfor **Admin username, SSH Public key (Generated in prerequisites section), then provide Subscription Id, Application Id, Client Secret (Password), Tenant Id (Created in prerequisites section)** in Custom Deployment and click on **Purchase**.
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/11.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/11.png)
 
 8. The below screen shot shows that the template has been successfully deployed.
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/12.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/12.png)
 
 9. We can view the output section as shown below.
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/13.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/13.png)
 
 ## Environment Details:
 
@@ -307,19 +307,19 @@ After the template has been successfully deployed, log in to the Jenkins server 
 
 1. Open PuTTY and enter the Jenkins FQDN under **Session**.
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/14.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/14.png)
 
 2. Navigate to **Connection &gt; SSH &gt; Auth**.
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/15.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/15.png)
 
 3. Click on the **Browse** section, select SSH private key file which was generated earlier as part of the prerequisites section.
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/16.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/16.png)
 
 4. Enter the same username, which was provided while deploying the ARM template.
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/17.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/17.png)
 
 5. Change to the root user by using the below command:
 
@@ -331,7 +331,7 @@ After the template has been successfully deployed, log in to the Jenkins server 
 
 7. Make a note of this value (Password), this credential will be used to login into the Jenkins WEBUI. (as part of step 9)
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/18.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/18.png)
 
 8. Open a new browser and enter the Jenkins FQDN with extension 8080, as shown below:
 
@@ -339,19 +339,19 @@ After the template has been successfully deployed, log in to the Jenkins server 
 
 9. To unlock the Jenkins server, provide the Initialadminpassword which was retrieved as part of step 7.
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/19.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/19.png)
 
 10. Click on **Install suggested plugins**.
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/20.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/20.png)
 
 11. Click on **Continue as admin**.
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/21.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/21.png)
 
 12. Click on **Start using Jenkins**.
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/22.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/22.png)
 
 13. We can see the jobs which are created in Jenkins server.
 
@@ -359,7 +359,7 @@ After the template has been successfully deployed, log in to the Jenkins server 
 
 1. The following are the jobs that are created in Jenkins.
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/23.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/23.png)
 
 2. For the above jobs, we have installed the Terraform and Packer plugins.
 
@@ -388,21 +388,21 @@ This job will launch a Virtual machine Scale set with three application nodes.
 
 1. Move to the Jenkins Dashboard and click on **ELKJob**.
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/24.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/24.png)
 
 2.  Click on **Build Now**. Then, to view the Console output, click on **Build number** (Eg: **#1** ) as shown below.
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/25.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/25.png)
 
 3.  Click on **Console Output.**
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/26.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/26.png)
 
 4.  The console output log will be shown as below. If the build is successful, the output will reflect as **Success**.
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/27.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/27.png)
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/28.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/28.png)
 
 5.  Once the ELKJob is successfully executed, then the MongoDBPackerJob will automatically start.
 
@@ -411,53 +411,53 @@ This job will launch a Virtual machine Scale set with three application nodes.
 
 7.  Click on **Build number** (Eg: **#1** ) as shown below.
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/29.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/29.png)
 
 8.  Click **Console Output** to see the job status.
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/30.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/30.png)
 
 9.  If output section of this log reflects as **&quot;Success&quot;** , then the Packer VHD is created successfully and stored in the packer storage account.
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/31.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/31.png)
 
 10.  Once the **MongoDBPackerJob** is successfully executed, copy the Packer VHD URL (as highlighted in the image below) from the console output and paste it in the **MongoDBTerraformJob** under the parameters section.
  Then execute the **MongoDBTerraformJob.**
 
- ![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/32.png)
+ ![alt text](https://github.com/sysgain/MSOSS/raw/master/images/32.png)
 
 11. Go to **MongoDBTerraformJob** , click on the **Configure** tab.
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/33.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/33.png)
 
 12. Scroll down to the **Terraform** section and update **Resource variable** section as follow:
     Update the **imageURL** variable value with VHD URL, which is created from **MongoDBpackerJob** as shown below:
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/34.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/34.png)
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/35.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/35.png)
 
 13. Click on **Apply and Save**.
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/36.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/36.png)
 
 14. Click on **Build Now** , then click on **Build number** **(#1).**
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/37.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/37.png)
 
 15. Click on **Console Output**.
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/38.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/38.png)
 
 16. The console output log is shown as below. If the build is successful, the output will reflect as **&quot;Success&quot;**.
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/39.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/39.png)
        
 ## Verifying Mongodb:
 
 1. Log in to the build instance and SSH the highlighted VM created from **MongoDBTerraformjob.** Login credentials can be found from theutput section of the previously shown **MongoDBTerraformjob**
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/40.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/40.png)
 
 2. Execute the below command to find the MongoDB path:
 
@@ -465,7 +465,7 @@ This job will launch a Virtual machine Scale set with three application nodes.
 
     **find / -iname mongod**
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/41.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/41.png)
 
 3. Change the directory to MongoDB path and execute the command as shown below: (Please fill the Date &amp; Time as appropriate)
 
@@ -473,13 +473,13 @@ This job will launch a Virtual machine Scale set with three application nodes.
 
     **./bin/mongo**
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/42.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/42.png)
 
 4. Enter the below command to validate the success of MongoDB configuration. Below screenshot depicts the local database creation:
 
     **db.adminCommand( { listDatabases: 1 } )**
 
-    ![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/43.png)
+    ![alt text](https://github.com/sysgain/MSOSS/raw/master/images/43.png)
 
 5. Enter the &quot; **exit**&quot; command to log out of MongoDB.
 
@@ -493,7 +493,7 @@ To build the National Park application, begin by logging in to the Build Instanc
 
 2. Chef Habitat can be configured using the command **hab setup**
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/44.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/44.png)
 
 3. Enter &quot; **yes**&quot; for setting up the default origin
 
@@ -505,7 +505,7 @@ To build the National Park application, begin by logging in to the Build Instanc
 
 7. Enter &quot; **yes**&quot; to Enable analytics
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/45.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/45.png)
 
 ### Creating Hart File:
 
@@ -513,13 +513,13 @@ To build the National Park application, begin by logging in to the Build Instanc
 
     **git clone** [https://github.com/sysgain/MSOSS.git](https://github.com/sysgain/MSOSS.git)
 
-    ![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/46.png)
+    ![alt text](https://github.com/sysgain/MSOSS/raw/master/images/46.png)
 
     **cd MSOSS**
 
     **git checkout habcode**
 
-    ![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/47.png)
+    ![alt text](https://github.com/sysgain/MSOSS/raw/master/images/47.png)
 
 2. Navigate to the location of the Directory where package plan.sh file is located.
 
@@ -527,19 +527,19 @@ To build the National Park application, begin by logging in to the Build Instanc
 
 3. Enter **hab studio enter**
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/48.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/48.png)
 
 4. Build the Application, using the &quot; **Build**&quot; Command.
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/49.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/49.png)
 
 5. Then exit the hab studio, by entering the **exit** command.
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/50.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/50.png)
 
 6. Once **build** is successful, a **HART** file will be generated in results Directory.
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/51.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/51.png)
 
 ### Uploading HART file to the Storage account
 
@@ -555,7 +555,7 @@ To build the National Park application, begin by logging in to the Build Instanc
 
     **cp /hab/cache/keys/root-&lt;DATETIME&gt;.pub /nationalparks/**
 
-    ![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/52.png)
+    ![alt text](https://github.com/sysgain/MSOSS/raw/master/images/52.png)
 
 3. ** Zip** the folder using the below commands.
 
@@ -563,7 +563,7 @@ To build the National Park application, begin by logging in to the Build Instanc
 
     **tar cvzf nationalparks.tar.gz /nationalparks/**
 
-    ![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/53.png)
+    ![alt text](https://github.com/sysgain/MSOSS/raw/master/images/53.png)
 
 4. Run the **uploadhart.sh** file from the scripts folder, to upload **ZIP** file to the Azure Storage Account.
 
@@ -571,54 +571,54 @@ To build the National Park application, begin by logging in to the Build Instanc
 
     **sh /scripts/uploadhart.sh nationalparks.tar.gz**
 
-    ![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/54.png)
+    ![alt text](https://github.com/sysgain/MSOSS/raw/master/images/54.png)
 
 5. Go to **AppPackerJob** , click on **Configure** and Update the highlighted file name (as shown in the above image) to the variable of **AppPackerjob** under the parameter section of Packer in Jenkins.
 
 Click **Apply** and **Save.**
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/55.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/55.png)
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/56.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/56.png)
 
 6. Click on **Build**.
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/57.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/57.png)
 
 7. Once the jobs are built, click on Console Output.
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/58.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/58.png)
 
 8. The console output log is as follows. If the build is successful, the output will reflect as **&quot;Success&quot;**. Copy the highlighted VHD URL which will be used in **vmssjob** as part of the successive steps.
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/59.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/59.png)
 
 9. Go to **VMSSjob** , then click on **Configure.**
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/60.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/60.png)
 
 10. Scroll down to the **Terraform** section, update the **Resource variables** section with the VHD URL created from **AppPackerjob** under Console Output. Once done, click on **Apply** and **Save**
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/61.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/61.png)
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/62.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/62.png)
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/63.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/63.png)
 
 11. Click on **Build**.
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/64.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/64.png)
 
 12. Click on **build number (#1)** and click on **Console Output**.
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/65.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/65.png)
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/66.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/66.png)
 
 13. The console output log is as follows. If the build is successful, the output will reflect as **&quot;Success&quot;**. Copy the highlighted Application\_URL.
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/67.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/67.png)
 
 14. In a new browser tab, paste **&lt;Application\_URL &gt;:8080/national-parks**.
 
-![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/68.png)
+![alt text](https://github.com/sysgain/MSOSS/raw/master/images/68.png)

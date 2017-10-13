@@ -131,7 +131,7 @@
         "location": "[resourceGroup().location]",
         "deploymentApiVersion": "2016-02-01",
         "suffix": "[substring(uniqueString(resourceGroup().id), 0, 5)]",
-        "baseUrl": "https://raw.githubusercontent.com/sysgain/MSOSS/staging/"
+        "baseUrl": "https://raw.githubusercontent.com/sysgain/MSOSS/master/"
     },
     "resources": [
         {
