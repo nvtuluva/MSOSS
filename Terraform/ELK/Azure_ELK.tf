@@ -158,7 +158,7 @@ resource "azurerm_virtual_machine_extension" "elasticSearch" {
     type_handler_version = "1.2"
      settings = <<EOF
     {
-        "fileUris": ["https://raw.githubusercontent.com/sysgain/MSOSS/staging/scripts/elkstack_deploy.sh"],
+        "fileUris": ["https://raw.githubusercontent.com/sysgain/MSOSS/master/scripts/elkstack_deploy.sh"],
         "commandToExecute":"sh elkstack_deploy.sh"
     }
 EOF

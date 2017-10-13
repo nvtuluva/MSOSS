@@ -160,7 +160,7 @@ resource "azurerm_virtual_machine" "mastervm" {
     disable_password_authentication = false
   }
   tags {
-    environment = "staging"
+    environment = "prod"
   }
   }
 output "VMName" {
