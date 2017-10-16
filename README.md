@@ -482,6 +482,7 @@ This job will launch a Virtual machine Scale set with three application nodes.
     ![alt text](https://github.com/sysgain/MSOSS/raw/master/images/43.png)
 
 5. Enter the &quot; **exit**&quot; command to log out of MongoDB.
+6. Enter **exit** again.
 
 ## Chef Habitat:
 
