@@ -38,6 +38,10 @@ variable "storageAccType"{
 description = "storage account type"
 default = "Standard_LRS"
 }
+variable "storage_account"{
+description = "storage account name"
+default = ""
+}
 variable "vmSize" {
 description = "virtual machine size"
 default = "Standard_DS1_v2"

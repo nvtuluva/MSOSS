@@ -3,6 +3,49 @@
 
 # OSS Quickstart (Phase-1)
 
+**Table of Contents**  
+
+- [Solution Architecture:](#solution-architecture)
+- [Terraform:](#terraform)
+- [Packer:](#packer)
+	- [Why Packer?](#why-packer)
+- [ELK Stack:](#elk-stack)
+	- [Elasticsearch](#elasticsearch)
+	- [Logstash—Routing Your Log Data](#logstashrouting-your-log-data)
+	- [Kibana—Visualizing Your Log Data](#kibanavisualizing-your-log-data)
+	- [Beats—Lightweight Data Shippers](#beatslightweight-data-shippers)
+	- [The following logs are visualized in Kibana:](#the-following-logs-are-visualized-in-kibana)
+- [Jenkins:](#jenkins)
+	- [Plugins:](#plugins)
+	- [Terraform plugin](#terraform-plugin)
+	- [Packer plugin:](#packer-plugin)
+	- [Jenkins Pipeline](#jenkins-pipeline)
+- [Azure Storage Account:](#azure-storage-account)
+- [Chef Habitat:](#chef-habitat)
+	- [Why Habitat?](#why-habitat)
+	- [Packaging an Application with Habitat:](#packaging-an-application-with-habitat)
+	- [Habitat Components:](#habitat-components)
+	- [Habitat Packaging Format:](#habitat-packaging-format)
+	- [Habitat Highlights:](#habitat-highlights)
+- [Prerequisites:](#prerequisites)
+	- [Generate your SSH key:](#generate-your-ssh-key)
+	- [Create Service principal](#create-service-principal)
+- [Deploy the ARM Template:](#deploy-the-arm-template)
+- [Environment Details:](#environment-details)
+- [Solution Workflow:](#solution-workflow)
+	- [Jobs](#jobs)
+	- [Executing the Jobs](#executing-the-jobs)
+	- [ELKJob](#elkjob)
+	- [MongoDBPackerJob](#mongodbpackerjob)
+	- [MongoDBTerraformJob](#mongodbterraformjob)
+	- [AppPackerJob:](#apppackerjob)
+	- [VMSSjob](#vmssjob)
+- [Verifying Mongodb:](#verifying-mongodb)
+- [Chef Habitat:](#chef-habitat)
+	- [Configuring Habitat:](#configuring-habitat)
+	- [Creating Hart File:](#creating-hart-file)
+	- [Uploading HART file to the Storage account](#uploading-hart-file-to-the-storage-account)
+
 ## Solution Architecture:
 
 ![alt text](https://github.com/sysgain/MSOSS/raw/master/images/1.png)
@@ -51,15 +94,15 @@ Elasticsearch is an open-source, broadly-distributable, readily-scalable, enterp
 - **Full text search: ** Elasticsearch uses Lucene to provide the most powerful full-text search capabilities available in any open-source product. The search features come with multi-language support, an extensive query language, geolocation support, context-sensitive suggestions, and autocompletion.
 - **Document orientation:**  You can store complex, real-world entities in Elasticsearch as structured JSON documents. All fields have a default index, and you can use all the indices in a single query to get precise results in the blink of an eye.
 
-### Logstash — Routing Your Log Data
+### Logstash—Routing Your Log Data
 
 **Logstash** is a tool for log data intake, processing, and output. This includes virtually any type of log that you manage: system logs, webserver logs, error logs, and app logs.  You can save a lot of time by training Logstash to normalize the data, getting Elasticsearch to process the data, and then visualizing it with Kibana. With Logstash, it&#39;s easy to take all those logs and store them in a central location. The only prerequisite is a Java runtime, and it takes just two commands to get Logstash up and running. Logstash will serve as the workhorse for storage, querying, and analysis of your logs. Since it has an arsenal of ready-made inputs, filters, codecs, and outputs, you can grab hold of a very powerful feature-set with a very little effort on your part. Think of Logstash as a pipeline for event processing: it takes precious little time to choose the inputs, configure the filters, and extract the relevant, high-value data from your log.
 
-### Kibana — Visualizing Your Log Data
+### Kibana—Visualizing Your Log Data
 
 **Kibana ** is your log-data dashboard. Get a better grip on your large data stores with point-and-click pie charts, bar graphs, trendlines, maps, and scatter plots. You can visualize trends and patterns for data that would otherwise be extremely tedious to read and interpret. Eventually, each business line can make practical use of your data collection as you help them customize their dashboards. Save it, share it, and link your data visualizations for quick and smart communication.
 
-### Beats —  Lightweight Data Shippers
+### Beats—Lightweight Data Shippers
 
 **Beats** is the platform for single-purpose data shippers. They install as lightweight agents and send data from hundreds or thousands of machines to Logstash or Elasticsearch. ELK allows Filebeat, Packetbeat, Metricbeat and Winlogbeat to ship log data from client servers.
 
@@ -622,4 +665,30 @@ Click **Apply** and **Save.**
 
 14. In a new browser tab, paste **&lt;Application\_URL &gt;:8080/national-parks**.
 
+<<<<<<< HEAD
 ![alt text](https://github.com/sysgain/MSOSS/raw/master/images/68.png)
+=======
+![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/68.png)
+
+15. Use the **FQDN** of **ELKJob** output from the Jenkins to log into **Kibana DashBoard** and credentials from output section of ARM template from Azure portal.
+
+![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/69.PNG)
+
+16. After log into Kibana Dashboard, Click on **&quot;filebeat&quot;** from left side menu and Click on star icon.
+
+![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/70.PNG)
+
+![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/71.PNG)
+
+17. Click on **&quot;Discover&quot;** from top menu to view the vmss and mongoDB logs.
+
+![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/72.PNG)
+
+![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/73.PNG)
+
+18. By default last 15 min logs will be displayed, you can change it as per log search and also you can set auto refresh time as shown below.
+
+![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/74.PNG)
+
+![alt text](https://github.com/sysgain/MSOSS/raw/staging/images/75.PNG)
+>>>>>>> staging

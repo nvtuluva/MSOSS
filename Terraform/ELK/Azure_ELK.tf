@@ -158,8 +158,13 @@ resource "azurerm_virtual_machine_extension" "elasticSearch" {
     type_handler_version = "1.2"
      settings = <<EOF
     {
+<<<<<<< HEAD
         "fileUris": ["https://raw.githubusercontent.com/sysgain/MSOSS/master/scripts/elkstack_deploy.sh"],
         "commandToExecute":"sh elkstack_deploy.sh"
+=======
+        "fileUris": ["https://raw.githubusercontent.com/sysgain/MSOSS/staging/scripts/elkstack_deploy.sh"],
+        "commandToExecute":"sh elkstack_deploy.sh ${var.client_id} ${var.client_secret} ${var.tenant_id} ${var.storage_account} ${var.subscription_id}"
+>>>>>>> staging
     }
 EOF
     tags {                                                                                                                             

@@ -6,7 +6,7 @@
             "type": "string",
             "defaultValue": "",
             "metadata": {
-                "description": "User name for the Virtual Machines."
+                "description": "user name for the virtual machines."
             }
         },
         "authenticationType": {
@@ -20,7 +20,7 @@
             "type": "string",
             "defaultValue": "",
             "metadata": {
-                "description": "Generate SSH public key"
+                "description": "generate ssh public key"
             }
         },
         "jenkinsVmSize": {
@@ -41,28 +41,28 @@
             "type": "string",
             "defaultValue": "",
             "metadata": {
-                "description": "Azure Subscription ID"
+                "description": "Azure subscription id"
             }
         },
         "AzureApplicationId": {
             "type": "securestring",
             "defaultValue": "",
             "metadata": {
-                "description": "AD Application ID"
+                "description": "ad application id"
             }
         },
         "AzureClientSecret": {
             "type": "securestring",
             "defaultValue": "",
             "metadata": {
-                "description": "AD ClientSecret"
+                "description": "ad clientsecret"
             }
         },
         "AzureTenantId": {
             "type": "string",
             "defaultValue": "",
             "metadata": {
-                "description": "Azure Tenant ID"
+                "description": "Azure tenant id"
             }
         }
     },
@@ -319,6 +319,9 @@
                     },
                     "networkSettings": {
                         "value": "[variables('networkSettings')]"
+                    },
+                    "AzureSubscriptionId": {
+                        "value": "[parameters('AzureSubscriptionId')]"
                     },
                     "AzureApplicationId": {
                         "value": "[parameters('AzureApplicationId')]"
